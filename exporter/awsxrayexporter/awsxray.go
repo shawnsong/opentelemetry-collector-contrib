@@ -34,6 +34,10 @@ const (
 	maxSegmentsPerPut = int(50) // limit imposed by PutTraceSegments API
 )
 
+func spanToString(s pdata.Span) string {
+	return s.TraceID().HexString() + "-" + s.SpanID().HexString() + "-" + s.ParentSpanID().HexString()
+}
+
 // newTracesExporter creates an component.TracesExporter that converts to an X-Ray PutTraceSegments
 // request and then posts the request to the configured region's X-Ray endpoint.
 func newTracesExporter(
@@ -59,10 +63,12 @@ func newTracesExporter(
 				for j := 0; j < rspans.InstrumentationLibrarySpans().Len(); j++ {
 					spans := rspans.InstrumentationLibrarySpans().At(j).Spans()
 					for k := 0; k < spans.Len(); k++ {
+						logger.Debug("Span string:" + spanToString(spans.At(k)))
 						document, localErr := translator.MakeSegmentDocumentString(spans.At(k), resource,
 							config.(*Config).IndexedAttributes, config.(*Config).IndexAllAttributes)
 						if localErr != nil {
 							logger.Debug("Error translating span.", zap.Error(localErr))
+							logger.Debug("Error Span:" + spanToString(spans.At(k)))
 							continue
 						}
 						documents = append(documents, &document)
