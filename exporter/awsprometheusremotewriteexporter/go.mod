@@ -1,4 +1,4 @@
-module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsprometheusremotewriteexporter
+module github.com/shawnsong/opentelemetry-collector-contrib/exporter/awsprometheusremotewriteexporter
 
 go 1.16
 

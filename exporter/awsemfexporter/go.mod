@@ -1,4 +1,4 @@
-module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter
+module github.com/shawnsong/opentelemetry-collector-contrib/exporter/awsemfexporter
 
 go 1.16
 

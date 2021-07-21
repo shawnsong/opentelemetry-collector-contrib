@@ -1,4 +1,4 @@
-module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/newrelicexporter
+module github.com/shawnsong/opentelemetry-collector-contrib/exporter/newrelicexporter
 
 go 1.16
 

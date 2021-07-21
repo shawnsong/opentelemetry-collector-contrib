@@ -1,4 +1,4 @@
-module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/signalfxexporter
+module github.com/shawnsong/opentelemetry-collector-contrib/exporter/signalfxexporter
 
 go 1.16
 

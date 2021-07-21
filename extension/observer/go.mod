@@ -1,4 +1,4 @@
-module github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer
+module github.com/shawnsong/opentelemetry-collector-contrib/extension/observer
 
 go 1.16
 

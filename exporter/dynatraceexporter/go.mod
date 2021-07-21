@@ -1,4 +1,4 @@
-module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/dynatraceexporter
+module github.com/shawnsong/opentelemetry-collector-contrib/exporter/dynatraceexporter
 
 go 1.16
 
